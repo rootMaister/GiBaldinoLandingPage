@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
     <script src="https://unpkg.com/scrollreveal" ></script>
+    <script src="knowMulti.js" async></script>
 
     <script>
       ScrollReveal({reset: true});
     </script>
-
 
     <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
   </head>
@@ -49,6 +49,9 @@
   </script>
 
   <body>
+
+    
+    
     <div class="nav">
       <a href="#">BE MULTI</a>
       '<a href="#">início</a>
@@ -118,6 +121,7 @@
 
     <section class="about">
       <div class="card-group">
+
         <div class="card">
           <h2>Sobre</h2>
           <p>
@@ -127,8 +131,11 @@
             criei a <span>Multi</span>, uma personagem que iria
             mudar meu futuro.
           </p>
-          <button>Sobre a Multi</button>
+          <button id="knowMulti">Sobre a Multi</button>
         </div>
+
+        
+
         <div class="card">
           <h2>Skills</h2>
           <li>Organização</li>
@@ -139,6 +146,7 @@
           <li>Contadora de piadas horríveis</li>
           <li>Criação de conteúdo</li>
         </div>
+
       </div>
     </section>
 
@@ -186,6 +194,5 @@
       ScrollReveal().reveal('.redes', {delay: 100});
     </script>
 
-    
   </body>
 </html>
