@@ -151,7 +151,7 @@
     </section>
 
     <script>
-      ScrollReveal().reveal('.about', {delay: 1000});
+      ScrollReveal().reveal('.about', {delay: 100});
     </script>
 
     
@@ -160,13 +160,13 @@
       <h2>Meu podcast</h2>
 
       <div class="container">
-        <div style="width: 500px">
+        <div class="podcast-embed-frame">
           <div id="embed-iframe"></div>
         </div>
 
-        <div>
+        <div class="cassette-frame">
           <h2 id="cassette-data">Temos X episódios!</h2>
-          <img src="./assets/cassette.svg" width="500px" height="100%" />
+          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
         </div>
       </div>
     </section>
@@ -186,12 +186,56 @@
           </p>
         </div>
       </div>
-      <img src="./assets/phone.svg" />
+      <img id="sticky-content" src="./assets/phone.svg" />
+
+      
+
+    </section>
+
+    <section class="podcast">
+      <h2>Meu podcast</h2>
+
+      <div class="container">
+        <div class="podcast-embed-frame">
+          <div id="embed-iframe"></div>
+        </div>
+
+        <div class="cassette-frame">
+          <h2 id="cassette-data">Temos X episódios!</h2>
+          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast">
+      <h2>Meu podcast</h2>
+
+      <div class="container">
+        <div class="podcast-embed-frame">
+          <div id="embed-iframe"></div>
+        </div>
+
+        <div class="cassette-frame">
+          <h2 id="cassette-data">Temos X episódios!</h2>
+          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
+        </div>
+      </div>
     </section>
 
 
-    <script>
+    <!-- <script>
       ScrollReveal().reveal('.redes', {delay: 100});
+    </script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-sticky@1.0.0/vanilla-sticky.min.js"></script>
+    
+    <script>
+      var contentSticky = new VanillaSticky({
+      HTMLElement: document.querySelector('#sticky-content'),
+      // options here
+      position: 'bottom',
+      });
+      contentSticky.init();
     </script>
 
   </body>

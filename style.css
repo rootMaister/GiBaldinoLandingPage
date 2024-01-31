@@ -146,7 +146,7 @@ body {
 
 .card-group {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   padding: 64px;
 }
 
@@ -188,16 +188,38 @@ button:active{
 .podcast {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  padding: 32px;
+  padding: 64px;
   color: var(--text-color);
+}
+
+.podcast h2{
+  margin-bottom: 8px;
 }
 
 .podcast .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 32px;
+}
+
+.podcast-embed-frame{
+  width: 50%;
+}
+
+.cassette-frame{
+  height: 356px;
+  width: 50%;
+  background-image: url(assets/cassette.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+#cassette-data{
+  position: relative;
+  top: 87px;
+  left: 80px;
 }
 
 p span {
@@ -219,13 +241,21 @@ p span {
   max-width: 700px;
 }
 
-
-
-@media screen and (min-width: 375px){
-
+.phone{
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
-@media screen and (min-width: 768px){
+
+@media screen and (max-width: 767px){
+  .card-group, .podcast .container{
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px){
   .cover{
     background-position: left;
     background-size: cover;
@@ -239,5 +269,7 @@ p span {
 }
 
 @media screen and (min-width: 1280px){
-
+  .card-group, .podcast .container{
+    flex-direction: row;
+  }
 }
