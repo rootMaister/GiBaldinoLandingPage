@@ -146,7 +146,6 @@ body {
 
 .card-group {
   display: flex;
-  /* flex-direction: row; */
   padding: 64px;
 }
 
@@ -219,7 +218,8 @@ button:active{
 #cassette-data{
   position: relative;
   top: 87px;
-  left: 80px;
+  left: 0;
+  text-align: center;
 }
 
 p span {
@@ -228,29 +228,69 @@ p span {
 }
 
 .redes {
+  height: 30vh;
   display: flex;
   align-items: center;
   padding-left: 64px;
   padding-right: 64px;
-  justify-content: space-around;
+  justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
   gap: 44px;
 }
 
-.redes .card {
-  max-width: 700px;
+
+
+#phone{
+  height: 30vh;
+  width: 20%;
+  border: 1px solid var(--border-color);
+  border-bottom: 0px; 
+  border-radius: 30px 30px 0px 0px;
+  background-color: var(--background-color);
 }
 
-.phone{
-  align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+#phone .appbar{
+  margin: 24px 16px;
+  display: flex;
+  justify-content: space-between;
+
+  .phone-time{
+    text-align: center;
+    font-weight: bolder;
+    width: 100%;
+    color: var(--text-color);
+  }
+
+  .sensor{
+    height: 30px;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    margin: 0px 16px 0px 16px;
+  }
+
+  .bar-icons{
+    width: 100%;
+    display: flex;
+    color: pink;
+  }
+
+  .bar-icons img{
+    margin: 0px 3px 0px 3px;
+  }
+
+}
+
+.fix-phone{
+  position: fixed;
+  bottom: 0;
+  right: 64px;
+  z-index: 1;
 }
 
 
 @media screen and (max-width: 767px){
-  .card-group, .podcast .container{
+  .card-group, .podcast .container, .redes{
     flex-direction: column;
   }
 }

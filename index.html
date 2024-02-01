@@ -186,57 +186,92 @@
           </p>
         </div>
       </div>
-      <img id="sticky-content" src="./assets/phone.svg" />
+      <!-- <img id="phone" src="./assets/phone.svg" /> -->
+      <div id="phone">
+        <div class="appbar">
+          <p class="phone-time">
+            teste
+          </p>
 
-      
+          <div class="sensor"></div>
 
-    </section>
+          <div class="bar-icons">
+            <img src="assets/icons/Cellular Connection.svg" alt="">
+            <img src="assets/icons/Wifi.svg" alt="">
+            <img src="assets/icons/Battery.svg" alt="">
+          </div>
 
-    <section class="podcast">
-      <h2>Meu podcast</h2>
-
-      <div class="container">
-        <div class="podcast-embed-frame">
-          <div id="embed-iframe"></div>
-        </div>
-
-        <div class="cassette-frame">
-          <h2 id="cassette-data">Temos X episódios!</h2>
-          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
-        </div>
-      </div>
-    </section>
-
-    <section class="podcast">
-      <h2>Meu podcast</h2>
-
-      <div class="container">
-        <div class="podcast-embed-frame">
-          <div id="embed-iframe"></div>
-        </div>
-
-        <div class="cassette-frame">
-          <h2 id="cassette-data">Temos X episódios!</h2>
-          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
         </div>
       </div>
     </section>
 
 
+    <script>
+      const date = new Date().toLocaleTimeString('default', {hour: '2-digit', minute: '2-digit'}, 1000);
+
+      phoneTime = document.querySelector('.phone-time');
+      phoneTime.innerText = date;
+      console.log(date);
+
+    </script>
+    
     <!-- <script>
       ScrollReveal().reveal('.redes', {delay: 100});
     </script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-sticky@1.0.0/vanilla-sticky.min.js"></script>
-    
+
     <script>
-      var contentSticky = new VanillaSticky({
-      HTMLElement: document.querySelector('#sticky-content'),
-      // options here
-      position: 'bottom',
-      });
-      contentSticky.init();
+      section = document.querySelector('.redes');
+      sectionBounds = document.querySelector('.redes').getBoundingClientRect();
+
+      const sectionHeight = sectionBounds.height;
+      
+
+      console.log(sectionHeight);
+
+      var observer = new IntersectionObserver(function(entries) {
+
+          if(entries[0].isIntersecting === true){
+            // console.log('Element has just become visible in screen');
+            phone.classList.add('fix-phone');
+            section.style= `height: ${sectionHeight.toString()} !important`;
+            console.log(sectionHeight);
+          }
+        }, { threshold: [1] });
+
+        observer.observe(document.querySelector("#phone"));
+        
     </script>
+
+    <section class="podcast">
+      <h2>Meu podcast</h2>
+
+      <div class="container">
+        <div class="podcast-embed-frame">
+          <div id="embed-iframe"></div>
+        </div>
+
+        <div class="cassette-frame">
+          <h2 id="cassette-data">Temos X episódios!</h2>
+          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast">
+      <h2>Meu podcast</h2>
+
+      <div class="container">
+        <div class="podcast-embed-frame">
+          <div id="embed-iframe"></div>
+        </div>
+
+        <div class="cassette-frame">
+          <h2 id="cassette-data">Temos X episódios!</h2>
+          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
+        </div>
+      </div>
+    </section>
 
   </body>
 </html>
