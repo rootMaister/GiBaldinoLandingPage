@@ -4,57 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-    <script src="https://unpkg.com/scrollreveal" ></script>
-    <script src="knowMulti.js" async></script>
+    <title>Multi</title>
 
     <script>
-      ScrollReveal({reset: true});
+      ScrollReveal({ reset: true });
     </script>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+    <script src="actions/vendors/spotify/iframe.action.js"></script>
+    <script src="actions/vendors/spotify/episode-totals.action.js"></script>
   </head>
 
-  <script>
-    window.onSpotifyIframeApiReady = (IFrameAPI) => {
-      const element = document.getElementById("embed-iframe");
-      const options = {
-        uri: "spotify:episode:2AzvBrzASU1LGyKfDcL31S",
-      };
-      const callback = (EmbedController) => {};
-      IFrameAPI.createController(element, options, callback);
-    };
-  </script>
-
-  <script>
-    const token =
-      "BQAoHmuxJyYLRp8yZ8InuPICorjEaxsQbqwTDJCJ6nyaYhOc3JuQd7Q3y3_ZatRfH_cutUXN9HGSlEC6qY-0TE27hTUsZ_v7bC9FPqi3wNZpqTC5pe9YY4pVs3Do3MgrLgCJ1u8JShkG4yt-HoPZR7eG2WHbcHZGww_1CTWVXyRMd6xFcM6hm8bbKV-NE38TILhsVGEHSJYJBwhPLksvnaesez11-GeDIn3I4K2NFP6_cSk-b0My48jh9RIt-RYpWbhjG8AS1T1XuQWui28eJeq8";
-
-    async function fetchWebApi(endpoint, method, body) {
-      const res = await fetch(`https://api.spotify.com/${endpoint}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        method,
-        body: JSON.stringify(body),
-      });
-
-      res.json().then((data) => {
-        const element = document.getElementById("cassette-data");
-        element.innerText = `Totalizando ${data.total_episodes} episódios`;
-      });
-    }
-
-    fetchWebApi("v1/shows/7u6FZwkBNf7fW6csb5eEf4", "GET");
-  </script>
-
   <body>
-
-    
-    
+    <script src="actions/mode/swap.action.js" async></script>
     <div class="nav">
       <a href="#">BE MULTI</a>
-      '<a href="#">início</a>
+      <a href="#">início</a>
       <a href="#about">sobre</a>
       <a href="#">#publi</a>
       <a href="#">um por cento mais</a>
@@ -121,7 +86,6 @@
 
     <section class="about">
       <div class="card-group">
-
         <div class="card">
           <h2>Sobre</h2>
           <p>
@@ -134,8 +98,6 @@
           <button id="knowMulti">Sobre a Multi</button>
         </div>
 
-        
-
         <div class="card">
           <h2>Skills</h2>
           <li>Organização</li>
@@ -146,35 +108,16 @@
           <li>Contadora de piadas horríveis</li>
           <li>Criação de conteúdo</li>
         </div>
-
       </div>
     </section>
 
     <script>
-      ScrollReveal().reveal('.about', {delay: 100});
+      ScrollReveal().reveal(".about", { delay: 100 });
     </script>
-
-    
-
-    <section class="podcast">
-      <h2>Meu podcast</h2>
-
-      <div class="container">
-        <div class="podcast-embed-frame">
-          <div id="embed-iframe"></div>
-        </div>
-
-        <div class="cassette-frame">
-          <h2 id="cassette-data">Temos X episódios!</h2>
-          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
-        </div>
-      </div>
-    </section>
 
     <script>
-      ScrollReveal().reveal('.podcast', {delay: 100});
+      ScrollReveal().reveal(".podcast", { delay: 100 });
     </script>
-    
 
     <section class="redes">
       <div>
@@ -189,59 +132,21 @@
       <!-- <img id="phone" src="./assets/phone.svg" /> -->
       <div id="phone">
         <div class="appbar">
-          <p class="phone-time">
-            teste
-          </p>
+          <p class="phone-time">00:00</p>
 
           <div class="sensor"></div>
 
           <div class="bar-icons">
-            <img src="assets/icons/Cellular Connection.svg" alt="">
-            <img src="assets/icons/Wifi.svg" alt="">
-            <img src="assets/icons/Battery.svg" alt="">
+            <img src="assets/icons/Cellular Connection.svg" alt="" />
+            <img src="assets/icons/Wifi.svg" alt="" />
+            <img src="assets/icons/Battery.svg" alt="" />
           </div>
-
         </div>
       </div>
     </section>
 
-
-    <script>
-      const date = new Date().toLocaleTimeString('default', {hour: '2-digit', minute: '2-digit'}, 1000);
-
-      phoneTime = document.querySelector('.phone-time');
-      phoneTime.innerText = date;
-      console.log(date);
-
-    </script>
-    
-    <!-- <script>
-      ScrollReveal().reveal('.redes', {delay: 100});
-    </script> -->
-
-
-    <script>
-      section = document.querySelector('.redes');
-      sectionBounds = document.querySelector('.redes').getBoundingClientRect();
-
-      const sectionHeight = sectionBounds.height;
-      
-
-      console.log(sectionHeight);
-
-      var observer = new IntersectionObserver(function(entries) {
-
-          if(entries[0].isIntersecting === true){
-            // console.log('Element has just become visible in screen');
-            phone.classList.add('fix-phone');
-            section.style= `height: ${sectionHeight.toString()} !important`;
-            console.log(sectionHeight);
-          }
-        }, { threshold: [1] });
-
-        observer.observe(document.querySelector("#phone"));
-        
-    </script>
+    <script src="actions/phone/datetime.action.js"></script>
+    <script src="actions/phone/observer.action.js"></script>
 
     <section class="podcast">
       <h2>Meu podcast</h2>
@@ -258,20 +163,10 @@
       </div>
     </section>
 
-    <section class="podcast">
-      <h2>Meu podcast</h2>
+    <section class="publis">
+      <h2>Publis favoritas</h2>
 
-      <div class="container">
-        <div class="podcast-embed-frame">
-          <div id="embed-iframe"></div>
-        </div>
-
-        <div class="cassette-frame">
-          <h2 id="cassette-data">Temos X episódios!</h2>
-          <!-- <img src="./assets/cassette.svg" width="500px" height="100%" /> -->
-        </div>
-      </div>
+      <div class="container"></div>
     </section>
-
   </body>
 </html>

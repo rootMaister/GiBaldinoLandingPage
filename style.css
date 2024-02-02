@@ -7,8 +7,8 @@
   scroll-behavior: smooth;
 }
 
-:root{
-  --primary: #4CEF75;
+:root {
+  --primary: #4cef75;
   --text-color: #ffffff;
   --border-color: #ffffff;
   --background-color: #212121;
@@ -16,10 +16,10 @@
   --span-background-color: var(--primary);
 }
 
-.multiMode:root{
+.multiMode:root {
   --text-color: #000000;
   --border-color: #000000;
-  --background-color: #2ECB54;
+  --background-color: #2ecb54;
   --span-text-color: var(--primary);
   --span-background-color: #000000;
 }
@@ -176,7 +176,7 @@ button {
   cursor: pointer;
 }
 
-button:active{
+button:active {
   box-shadow: 0px 0px 0px 0px #000;
   margin-top: 20px;
   margin-left: 6px;
@@ -191,7 +191,7 @@ button:active{
   color: var(--text-color);
 }
 
-.podcast h2{
+.podcast h2 {
   margin-bottom: 8px;
 }
 
@@ -202,11 +202,11 @@ button:active{
   align-items: center;
 }
 
-.podcast-embed-frame{
+.podcast-embed-frame {
   width: 50%;
 }
 
-.cassette-frame{
+.cassette-frame {
   height: 356px;
   width: 50%;
   background-image: url(assets/cassette.svg);
@@ -215,7 +215,7 @@ button:active{
   background-size: auto;
 }
 
-#cassette-data{
+#cassette-data {
   position: relative;
   top: 87px;
   left: 0;
@@ -238,30 +238,35 @@ p span {
   gap: 44px;
 }
 
+.publis {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 64px;
+  color: var(--text-color);
+}
 
-
-#phone{
+#phone {
   height: 30vh;
   width: 20%;
   border: 1px solid var(--border-color);
-  border-bottom: 0px; 
+  border-bottom: 0px;
   border-radius: 30px 30px 0px 0px;
   background-color: var(--background-color);
 }
 
-#phone .appbar{
+#phone .appbar {
   margin: 24px 16px;
   display: flex;
   justify-content: space-between;
 
-  .phone-time{
+  .phone-time {
     text-align: center;
     font-weight: bolder;
     width: 100%;
     color: var(--text-color);
   }
 
-  .sensor{
+  .sensor {
     height: 30px;
     width: 400px;
     border: 1px solid var(--border-color);
@@ -269,47 +274,47 @@ p span {
     margin: 0px 16px 0px 16px;
   }
 
-  .bar-icons{
+  .bar-icons {
     width: 100%;
     display: flex;
     color: pink;
   }
 
-  .bar-icons img{
+  .bar-icons img {
     margin: 0px 3px 0px 3px;
   }
-
 }
 
-.fix-phone{
+.fix-phone {
   position: fixed;
   bottom: 0;
   right: 64px;
   z-index: 1;
 }
 
-
-@media screen and (max-width: 767px){
-  .card-group, .podcast .container, .redes{
+@media screen and (max-width: 767px) {
+  .card-group,
+  .podcast .container,
+  .redes {
     flex-direction: column;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px){
-  .cover{
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .cover {
     background-position: left;
     background-size: cover;
   }
 
-  .card-group, .podcast .container{
+  .card-group,
+  .podcast .container {
     flex-direction: column;
   }
-
-
 }
 
-@media screen and (min-width: 1280px){
-  .card-group, .podcast .container{
+@media screen and (min-width: 1280px) {
+  .card-group,
+  .podcast .container {
     flex-direction: row;
   }
 }
